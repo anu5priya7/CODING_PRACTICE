@@ -1,0 +1,44 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// Please make sure not to delete the WorkAtTech class
+// You can create additional non-public classes as well
+// But the main method should be in the WorkAtTech class
+
+class WorkAtTech
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+       
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of test cases
+        int T = scanner.nextInt();
+        scanner.nextLine(); // Consume newline character
+
+        // Process each test case
+        for (int i = 0; i < T; i++) {
+            String str = scanner.nextLine();
+            String toggledStr = toggleCase(str);
+            System.out.println(toggledStr);
+        }
+
+        scanner.close();
+    }
+
+    public static String toggleCase(String str) {
+        StringBuilder result = new StringBuilder();
+        for (char ch : str.toCharArray()) {
+            if (Character.isUpperCase(ch)) {
+                result.append(Character.toLowerCase(ch));
+            } else if (Character.isLowerCase(ch)) {
+                result.append(Character.toUpperCase(ch));
+            } else {
+                // If character is neither uppercase nor lowercase, keep it unchanged
+                result.append(ch);
+            }
+        }
+        return result.toString();
+    }
+}
