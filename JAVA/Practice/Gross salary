@@ -1,0 +1,58 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// Please make sure not to delete the WorkAtTech class
+// You can create additional non-public classes as well
+// But the main method should be in the WorkAtTech class
+class WorkAtTech
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+// 		  Scanner sc = new Scanner(System.in);
+
+        
+//         int T = sc.nextInt();
+
+// 		int hr = sc.nextInt();
+// 		int da = sc.nextInt();
+// 		int bo = sc.nextInt();
+        
+//         for (int i = 0; i < T; i++) {
+//             int base = sc.nextInt();
+
+         
+//     double  ans = base + base * hr / 100.0  + base * da / 100.0  + base* bo / 100  ;
+//              System.out.printf("%.2f\n",  ans);
+
+
+             
+ 
+         Scanner scanner = new Scanner(System.in);
+ 
+        int T = scanner.nextInt();
+        scanner.nextLine();  
+       
+
+        int hraPercent = scanner.nextInt();
+        int daPercent = scanner.nextInt();
+        int bonusPercent = scanner.nextInt();
+        scanner.nextLine(); // Consume newline character
+
+        // Process each test case
+        for (int i = 0; i < T; i++) {
+            int baseSalary = scanner.nextInt();
+ double grossSalary = computeGrossSalary(baseSalary, hraPercent, daPercent, bonusPercent);
+            System.out.printf("%.2f\n", grossSalary);
+        }
+
+        scanner.close();
+    }
+
+    public static double computeGrossSalary(int baseSalary, int hraPercent, int daPercent, int bonusPercent) {
+        double hra = baseSalary * hraPercent / 100.0;
+        double da = baseSalary * daPercent / 100.0;
+        double bonus = baseSalary * bonusPercent / 100.0;
+        return baseSalary + hra + da + bonus;
+	}
+}
